@@ -24,53 +24,40 @@ function R({ children, cls = '', delay = 0 }) {
   );
 }
 
+
 export default function Realisations() {
   return (
-    <div style={{ paddingTop: '72px', minHeight: '100vh', background: 'var(--carbon, #143546)' }}>
+    <div style={{ paddingTop: '72px', minHeight: '100vh', background: 'var(--pearl, #f8f9fa)' }}>
       <section className={s.real}>
         <R cls={s.realHead}>
-          <p className={s.label}>Réalisations</p>
-          <h1 className={s.h2White}>Nos derniers projets.</h1>
+          <p className={s.label}>Portfolio</p>
+          <h1 className={s.h2}>Nos dernières réalisations.</h1>
+          <p className={s.body}>
+            Découvrez une sélection de chantiers de rénovation intérieure menés par nos artisans. De la restructuration d'espaces à la finition peinture haute couture.
+          </p>
         </R>
+
         <div className={s.realGrid}>
-          <R cls={s.realBig}>
-            <div className={s.realImg}>
-              <Image src="/r1.jpg" alt="Appartement Haussmannien rénové" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 60vw" />
+          {[
+            { tag: 'Rénovation Complète', title: 'Appartement Haussmannien', sub: 'Toulouse Centre — 110 m²', img: '/r1.jpg' },
+            { tag: 'Plaquisterie', title: 'Villa Contemporaine', sub: 'Balma — 150 m²', img: '/hero-luxury.jpg' },
+            { tag: 'Peinture', title: 'Loft Industriel', sub: 'Toulouse — 90 m²', img: '/r2.jpg' },
+            { tag: 'Agencement', title: 'Boutique de Luxe', sub: 'Toulouse Carmes — 65 m²', img: '/s1.jpg' },
+            { tag: 'Jointure & Enduits', title: 'Bureaux d\'entreprise', sub: 'Labège — 200 m²', img: '/s2.jpg' },
+            { tag: 'Faux-plafonds', title: 'Maison Toulousaine', sub: 'Tournefeuille — 130 m²', img: '/hero-bg.jpg' },
+          ].map((item, i) => (
+            <R key={i} delay={i * 50} cls={s.realItem}>
+              <div className={s.realImg}>
+                <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:900px) 100vw, 50vw" />
+              </div>
               <div className={s.realOverlay}>
-                <div className={s.realTag}>Rénovation complète</div>
-                <div className={s.realInfo}>
-                  <h4 className={s.realTitle}>Appartement Haussmannien</h4>
-                  <p className={s.realSub}>Toulouse Centre — 110 m²</p>
-                </div>
-              </div>
-            </div>
-          </R>
-          <div className={s.realSmalls}>
-            <R cls={s.realSmall}>
-              <div className={s.realImg}>
-                <Image src="/s1.jpg" alt="Chantier plaquisterie jointure" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 40vw" />
-                <div className={s.realOverlay}>
-                  <div className={s.realTag}>Plaquisterie</div>
-                  <div className={s.realInfo}>
-                    <h4 className={s.realTitle}>Jointure & Finitions</h4>
-                    <p className={s.realSub}>Toulouse Lardenne — 65 m²</p>
-                  </div>
+                <div>
+                  <h4 className={s.realTitle}>{item.title}</h4>
+                  <p className={s.realSub}>{item.sub}</p>
                 </div>
               </div>
             </R>
-            <R cls={s.realSmall} delay={100}>
-              <div className={s.realImg}>
-                <Image src="/r2.jpg" alt="Couloir rénové" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 40vw" />
-                <div className={s.realOverlay}>
-                  <div className={s.realTag}>Peinture</div>
-                  <div className={s.realInfo}>
-                    <h4 className={s.realTitle}>Couloir & Espaces</h4>
-                    <p className={s.realSub}>Colomiers — 90 m²</p>
-                  </div>
-                </div>
-              </div>
-            </R>
-          </div>
+          ))}
         </div>
       </section>
     </div>

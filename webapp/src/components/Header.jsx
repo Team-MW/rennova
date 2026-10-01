@@ -24,8 +24,8 @@ export default function Header() {
     <header className={`${s.header} ${isSolid ? s.solid : ''}`}>
       <div className={s.inner}>
         <Link href="/" className={s.logo}>
-          <Image src="/logo-icon.jpg" alt="REONOVA" width={36} height={36} className={s.logoMark} priority />
-          <span className={s.logoName}>REONOVA</span>
+          <Image src="/logo-icon.jpg" alt="RENOVA" width={36} height={36} className={s.logoMark} priority />
+          <span className={s.logoName}>RENOVA</span>
         </Link>
 
         <nav className={s.nav}>
@@ -35,9 +35,9 @@ export default function Header() {
           <Link href="/contact" className={s.link}>Contact</Link>
         </nav>
 
-        <Link href="/contact" className={s.cta}>
+        <a href="/contact#devis" className={s.cta}>
           Devis Gratuit
-        </Link>
+        </a>
 
         <button className={`${s.burger} ${open ? s.burgerOpen : ''}`} onClick={() => setOpen(!open)} aria-label="Menu">
           <span /><span />
@@ -49,7 +49,7 @@ export default function Header() {
         <Link href="/realisations" className={s.mobileLink} onClick={() => setOpen(false)}>Réalisations</Link>
         <Link href="/a-propos" className={s.mobileLink} onClick={() => setOpen(false)}>À Propos</Link>
         <Link href="/contact" className={s.mobileLink} onClick={() => setOpen(false)}>Contact</Link>
-        <Link href="/contact" className={s.mobileCta} onClick={() => setOpen(false)}>Devis Gratuit</Link>
+        <a href="/contact#devis" className={s.mobileCta} onClick={() => setOpen(false)}>Devis Gratuit</a>
       </div>
     </header>
   );

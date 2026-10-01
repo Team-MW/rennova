@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
   }, []);
 
   const phone = '33767021944';
-  const msg = encodeURIComponent("Bonjour REONOVA, je souhaite vous contacter au sujet d'un projet de rénovation.");
+  const msg = encodeURIComponent("Bonjour RENOVA, je souhaite vous contacter au sujet d'un projet de rénovation.");
   
   return (
     <div className={s.wrapper}>

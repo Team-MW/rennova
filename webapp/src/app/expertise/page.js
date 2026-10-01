@@ -25,6 +25,8 @@ function R({ children, cls = '', delay = 0 }) {
   );
 }
 
+
+
 export default function Expertise() {
   return (
     <div style={{ paddingTop: '72px' }}>
@@ -36,9 +38,9 @@ export default function Expertise() {
               Des savoir-faire<br />précis et rigoureux.
             </h1>
             <p className={s.body}>
-              Depuis 2018, REONOVA intervient sur des chantiers de rénovation intérieure haut de gamme en Occitanie. Nous maîtrisons chaque étape du second œuvre, du cloisonnement à la finition.
+              Depuis 2018, RENOVA intervient sur des chantiers de rénovation intérieure haut de gamme en Occitanie. Nous maîtrisons chaque étape du second œuvre, du cloisonnement à la finition.
             </p>
-            <Link href="/contact" className={s.btnInk}>Nous contacter</Link>
+            <Link href="/contact#devis" className={s.btnInk}>Nous contacter</Link>
           </R>
         </div>
         <div className={s.expertiseR}>

@@ -23,12 +23,34 @@ function R({ children, cls = '', delay = 0 }) {
   );
 }
 
-export default function Contact() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', msg: '' });
 
-  const submit = e => { e.preventDefault(); setSent(true); };
-  const set = k => e => setForm({ ...form, [k]: e.target.value });
+export default function Contact() {
+  const [formLoaded, setFormLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleMessage = (e) => {
+      if (typeof e.data === 'string') {
+        const args = e.data.split(':');
+        if (args.length > 2) {
+          const iframe = document.getElementById('JotFormIFrame-' + args[args.length - 1]);
+          if (iframe && args[0] === 'setHeight') {
+            iframe.style.height = args[1] + 'px';
+          }
+        }
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === '#devis') {
+      setTimeout(() => {
+        const el = document.getElementById('devis');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+  }, []);
 
   return (
     <div style={{ paddingTop: '72px' }}>
@@ -43,11 +65,11 @@ export default function Contact() {
             <div className={s.contactDetails}>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Téléphone</span>
-                <span className={s.cDetailVal}>06 XX XX XX XX</span>
+                <span className={s.cDetailVal}>07 67 02 19 44</span>
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Email</span>
-                <span className={s.cDetailVal}>contact@reonova.fr</span>
+                <span className={s.cDetailVal}>contact@renova.fr</span>
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Zone</span>
@@ -57,51 +79,32 @@ export default function Contact() {
           </R>
         </div>
 
-        <div className={s.contactR}>
-          <R>
-            {sent ? (
-              <div className={s.sent}>
-                <div className={s.sentIcon}>✓</div>
-                <h3 className={s.sentTitle}>Message envoyé</h3>
-                <p className={s.sentTxt}>Nous reviendrons vers vous sous 48 heures.</p>
+        <div className={s.contactR} id="devis">
+          <R cls={s.iframeWrapper}>
+            {!formLoaded && (
+              <div className={s.formLoader}>
+                <div className={s.spinner}></div>
+                <p>Chargement du formulaire...</p>
               </div>
-            ) : (
-              <form onSubmit={submit} className={s.form}>
-                <h3 className={s.formTitle}>Demande de devis gratuit</h3>
-                <div className={s.formRow}>
-                  <div className={s.fg}>
-                    <label className={s.flabel} htmlFor="f-name">Nom complet *</label>
-                    <input id="f-name" required type="text" placeholder="Jean Dupont" className={s.fi} value={form.name} onChange={set('name')} />
-                  </div>
-                  <div className={s.fg}>
-                    <label className={s.flabel} htmlFor="f-phone">Téléphone *</label>
-                    <input id="f-phone" required type="tel" placeholder="06 00 00 00 00" className={s.fi} value={form.phone} onChange={set('phone')} />
-                  </div>
-                </div>
-                <div className={s.fg}>
-                  <label className={s.flabel} htmlFor="f-email">Email *</label>
-                  <input id="f-email" required type="email" placeholder="jean@email.com" className={s.fi} value={form.email} onChange={set('email')} />
-                </div>
-                <div className={s.fg}>
-                  <label className={s.flabel} htmlFor="f-service">Prestation</label>
-                  <select id="f-service" className={s.fi} value={form.service} onChange={set('service')}>
-                    <option value="">Sélectionner…</option>
-                    <option>Plaquisterie</option>
-                    <option>Jointure & Enduits</option>
-                    <option>Peinture</option>
-                    <option>Rénovation complète</option>
-                  </select>
-                </div>
-                <div className={s.fg}>
-                  <label className={s.flabel} htmlFor="f-msg">Votre projet *</label>
-                  <textarea id="f-msg" required rows={4} placeholder="Surface, nature des travaux, délais envisagés…" className={`${s.fi} ${s.ta}`} value={form.msg} onChange={set('msg')} />
-                </div>
-                <button type="submit" id="contact-submit" className={s.btnSubmit}>
-                  Envoyer la demande
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </button>
-              </form>
             )}
+            <iframe
+              id="JotFormIFrame-262733401318350"
+              title="Devis Gratuit RENOVA"
+              onLoad={() => setFormLoaded(true)}
+              allowtransparency="true"
+              allowFullScreen={true}
+              allow="geolocation; microphone; camera"
+              src="https://form.jotform.com/262733401318350"
+              frameBorder="0"
+              style={{ 
+                minWidth: '100%', 
+                height: formLoaded ? '800px' : '0', 
+                border: 'none',
+                opacity: formLoaded ? 1 : 0,
+                transition: 'opacity 0.4s ease'
+              }}
+              scrolling="no"
+            />
           </R>
         </div>
       </section>

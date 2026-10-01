@@ -4,9 +4,32 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata = {
-  title: 'REONOVA — Rénovation Intérieure Haut de Gamme',
-  description: 'Expert en jointure, plaquisterie, peinture et rénovation intérieure. REONOVA — des finitions d\'exception, livrées dans les délais.',
-  keywords: 'rénovation intérieure, plaquiste, jointure, peinture, REONOVA, Toulouse',
+  metadataBase: new URL('https://www.renova31.fr'),
+  title: {
+    default: 'RENOVA — Rénovation Intérieure Haut de Gamme à Toulouse',
+    template: '%s | RENOVA'
+  },
+  description: 'Expert en jointure, plaquisterie, peinture et rénovation intérieure en Haute-Garonne. RENOVA — des chantiers propres et des finitions d\'exception.',
+  keywords: ['rénovation intérieure', 'plaquiste Toulouse', 'artisan peintre', 'jointeur', 'chantier propre', 'RENOVA', 'aménagement intérieur'],
+  openGraph: {
+    title: 'RENOVA — Rénovation Intérieure Haut de Gamme',
+    description: 'Expert en jointure, plaquisterie et peinture à Toulouse.',
+    url: 'https://www.renova31.fr',
+    siteName: 'RENOVA',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {

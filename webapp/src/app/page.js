@@ -53,7 +53,7 @@ export default function Home() {
     <>
       <section className={s.hero}>
         <div className={s.heroPic}>
-          <Image src="/hero.jpg" alt="Espace rénové par REONOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
+          <Image src="/hero.jpg" alt="Espace rénové par RENOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
         </div>
         <div className={s.heroVeil} />
         <div className={s.heroBody}>
@@ -68,7 +68,7 @@ export default function Home() {
             Jointure · Plaquisterie · Peinture · Rénovation complète
           </p>
           <div className={s.heroCtas}>
-            <Link href="/contact" className={s.btnGold}>Demander un devis</Link>
+            <Link href="/contact#devis" className={s.btnGold}>Demander un devis</Link>
             <Link href="/realisations" className={s.btnGhost}>Voir nos projets</Link>
           </div>
         </div>
@@ -81,8 +81,8 @@ export default function Home() {
       <section className={s.figures}>
         <div className={s.figuresInner}>
           {[
-            { n: 350, unit: '+', label: 'Chantiers réalisés' },
-            { n: 6,   unit: ' ans', label: "D'expérience" },
+            { n: 998, unit: '+', label: 'Chantiers réalisés' },
+            { n: 22,   unit: ' ans', label: "D'expérience" },
             { n: 100, unit: '%', label: 'Devis gratuits' },
             { n: 48,  unit: 'h', label: 'Délai de réponse' },
           ].map(f => (
@@ -103,7 +103,7 @@ export default function Home() {
               <em>Haute-Garonne</em>
             </h2>
             <p className={s.body} style={{ marginTop: '1.5rem' }}>
-              REONOVA déploie ses équipes de plaquistes et peintres qualifiés dans toute l&apos;Occitanie. Nous intervenons rapidement pour vos projets de rénovation intérieure, de l&apos;isolation à la finition haut de gamme, chez les particuliers et les professionnels.
+              RENOVA déploie ses équipes de plaquistes et peintres qualifiés dans toute l&apos;Occitanie. Nous intervenons rapidement pour vos projets de rénovation intérieure, de l&apos;isolation à la finition haut de gamme, chez les particuliers et les professionnels.
             </p>
           </R>
           <R delay={150}>
@@ -132,7 +132,7 @@ export default function Home() {
         <div className={s.testimGrid}>
           {[
             { q: 'Chantier impeccable. Les finitions sont d\'une précision remarquable. L\'équipe est sérieuse, ponctuelle et laisse les lieux propres après chaque journée de travail.', name: 'Sophie M.', role: 'Propriétaire — Toulouse' },
-            { q: 'Je confie systématiquement mes chantiers de rénovation à REONOVA depuis 3 ans. Fiabilité, respect des délais et qualité d\'exécution irréprochable. Un partenaire de confiance.', name: 'Marc D.', role: 'Promoteur immobilier' },
+            { q: 'Je confie systématiquement mes chantiers de rénovation à RENOVA depuis 3 ans. Fiabilité, respect des délais et qualité d\'exécution irréprochable. Un partenaire de confiance.', name: 'Marc D.', role: 'Promoteur immobilier' },
             { q: 'La maîtrise technique de l\'équipe est vraiment au-dessus de la moyenne. Mes clients architectes et moi-même sommes toujours très satisfaits de la qualité des finitions.', name: 'Isabelle T.', role: 'Architecte d\'intérieur' },
           ].map((t, i) => (
             <R key={t.name} delay={i * 100} cls={s.testimCard}>

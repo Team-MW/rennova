@@ -24,13 +24,14 @@ function R({ children, cls = '', delay = 0 }) {
   );
 }
 
+
 export default function APropos() {
   return (
     <div style={{ paddingTop: '72px' }}>
       <section className={s.about}>
         <R cls={s.aboutPicWrap}>
           <div className={s.aboutPic}>
-            <Image src="/s2.jpg" alt="Artisan peintre REONOVA" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" />
+            <Image src="/s2.jpg" alt="Artisan peintre RENOVA" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" />
           </div>
         </R>
         <div className={s.aboutContent}>
@@ -40,13 +41,13 @@ export default function APropos() {
               Fondés sur<br />l&apos;exigence.
             </h1>
             <p className={s.body}>
-              REONOVA est une entreprise artisanale spécialisée dans l'aménagement intérieur et les travaux de finition haut de gamme (plaquisterie, jointure, peinture). Nous intervenons sur des chantiers résidentiels et tertiaires avec une rigueur absolue.
+              RENOVA est une entreprise artisanale spécialisée dans l&apos;aménagement intérieur et les travaux de finition haut de gamme (plaquisterie, jointure, peinture). Nous intervenons sur des chantiers résidentiels et tertiaires avec une rigueur absolue.
             </p>
             <p className={s.body} style={{ marginTop: '1.25rem' }}>
-              <strong>L'exigence du "chantier propre" :</strong> Nous savons qu'engager des travaux peut être stressant. C'est pourquoi nous faisons de la propreté notre priorité absolue. Nos équipes protègent intégralement vos sols et votre mobilier avant chaque intervention. Nous utilisons des outils équipés de systèmes d'aspiration pour limiter la poussière, et nous laissons les lieux impeccables chaque soir.
+              <strong>L&apos;exigence du &quot;chantier propre&quot; :</strong> Nous savons qu&apos;engager des travaux peut être stressant. C&apos;est pourquoi nous faisons de la propreté notre priorité absolue. Nos équipes protègent intégralement vos sols et votre mobilier avant chaque intervention. Nous utilisons des outils équipés de systèmes d&apos;aspiration pour limiter la poussière, et nous laissons les lieux impeccables chaque soir.
             </p>
             <p className={s.body} style={{ marginTop: '1.25rem' }}>
-              De la première plaque de BA13 posée jusqu'au dernier coup de pinceau, nous refusons tout compromis sur la qualité des matériaux et des finitions.
+              De la première plaque de BA13 posée jusqu&apos;au dernier coup de pinceau, nous refusons tout compromis sur la qualité des matériaux et des finitions.
             </p>
             <div className={s.aboutBadges}>
               {['Artisan Certifié RGE', 'Assurance Décennale', 'Devis Gratuit sous 48h', 'Intervention Occitanie'].map(b => (
