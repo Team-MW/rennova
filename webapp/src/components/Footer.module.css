@@ -20,8 +20,8 @@
   font-size: 0.72rem;
   color: rgba(255,255,255,0.2);
 }
-.fbl { margin-left: 2rem; color: rgba(255,255,255,0.2); transition: color 0.2s; }
-.fbl:hover { color: rgba(255,255,255,0.5); }
+.fbl { margin-left: 2rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.fbl:hover { color: rgba(255,255,255,0.85); }
 
 @media (max-width: 900px) {
   .footerInner { flex-direction: column; }

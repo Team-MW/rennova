@@ -94,6 +94,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={s.zone} style={{ background: '#fff', paddingBottom: '2rem' }}>
+        <div className={s.zoneInner}>
+          <R>
+            <p className={s.label}>Nos Services</p>
+            <h2 className={s.h2}>
+              De l&apos;isolation<br />
+              <em>aux finitions.</em>
+            </h2>
+            <p className={s.body} style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
+              Nous accompagnons vos projets de rénovation intérieure de A à Z. Plaquisterie, création d&apos;espaces, isolation phonique et thermique, jointure parfaite et peinture haut de gamme.
+            </p>
+          </R>
+          
+          <div className={s.testimGrid} style={{ marginTop: '2rem', marginBottom: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            <R delay={100} cls={s.testimCard} style={{ background: 'var(--bg, #f4f6f9)', padding: '2rem', borderRadius: '4px' }}>
+              <h3 className={s.expTitle} style={{ color: 'var(--ink)' }}>Plaquisterie</h3>
+              <p className={s.body} style={{ marginTop: '1rem', fontSize: '0.85rem' }}>Création de cloisons, faux-plafonds, doublages et agencements sur-mesure pour redéfinir vos espaces.</p>
+            </R>
+            <R delay={200} cls={s.testimCard} style={{ background: 'var(--bg, #f4f6f9)', padding: '2rem', borderRadius: '4px' }}>
+              <h3 className={s.expTitle} style={{ color: 'var(--ink)' }}>Jointure Haute Définition</h3>
+              <p className={s.body} style={{ marginTop: '1rem', fontSize: '0.85rem' }}>Finition Q4, ratissage complet et ponçage mécanique sans poussière pour des murs parfaitement lisses.</p>
+            </R>
+            <R delay={300} cls={s.testimCard} style={{ background: 'var(--bg, #f4f6f9)', padding: '2rem', borderRadius: '4px' }}>
+              <h3 className={s.expTitle} style={{ color: 'var(--ink)' }}>Peinture & Décoration</h3>
+              <p className={s.body} style={{ marginTop: '1rem', fontSize: '0.85rem' }}>Application au pistolet Airless ou au rouleau traditionnel avec des peintures professionnelles (Zolpan, Seigneurie...).</p>
+            </R>
+          </div>
+          
+          <div style={{ marginTop: '3rem' }}>
+            <Link href="/expertise" className={s.btnInk}>Découvrir notre expertise</Link>
+          </div>
+        </div>
+      </section>
+
       <section className={s.zone}>
         <div className={s.zoneInner}>
           <R>
