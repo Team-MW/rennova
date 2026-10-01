@@ -28,10 +28,15 @@ export default function Footer() {
         </div>
       </div>
       <div className={s.footerBottom}>
-        <span>© {new Date().getFullYear()} RENOVA. Tous droits réservés.</span>
-        <div>
-          <Link href="#" className={s.fbl}>Mentions légales</Link>
-          <Link href="#" className={s.fbl}>Confidentialité</Link>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+          <span>© {new Date().getFullYear()} RENOVA. Tous droits réservés.</span>
+          <span style={{ color: 'rgba(255,255,255,0.15)', fontSize: '0.65rem' }}>
+            Réalisé par <a href="https://microdidact.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>Microdidact</a>
+          </span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/mentions-legales" className={s.fbl}>Mentions légales</Link>
+          <Link href="/mentions-legales" className={s.fbl}>Confidentialité</Link>
         </div>
       </div>
     </footer>

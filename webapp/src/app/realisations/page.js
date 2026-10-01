@@ -40,11 +40,11 @@ export default function Realisations() {
         <div className={s.realGrid}>
           {[
             { tag: 'Rénovation Complète', title: 'Appartement Haussmannien', sub: 'Toulouse Centre — 110 m²', img: '/r1.jpg' },
-            { tag: 'Plaquisterie', title: 'Villa Contemporaine', sub: 'Balma — 150 m²', img: '/hero-luxury.jpg' },
+            { tag: 'Plaquisterie', title: 'Villa Contemporaine', sub: 'Balma — 150 m²', img: '/chantiers-plaquiste.webp' },
             { tag: 'Peinture', title: 'Loft Industriel', sub: 'Toulouse — 90 m²', img: '/r2.jpg' },
             { tag: 'Agencement', title: 'Boutique de Luxe', sub: 'Toulouse Carmes — 65 m²', img: '/s1.jpg' },
-            { tag: 'Jointure & Enduits', title: 'Bureaux d\'entreprise', sub: 'Labège — 200 m²', img: '/s2.jpg' },
-            { tag: 'Faux-plafonds', title: 'Maison Toulousaine', sub: 'Tournefeuille — 130 m²', img: '/hero-bg.jpg' },
+            { tag: 'Jointure & Enduits', title: 'Bureaux d\'entreprise', sub: 'Labège — 200 m²', img: '/jointeur.webp' },
+            { tag: 'Faux-plafonds', title: 'Maison Toulousaine', sub: 'Tournefeuille — 130 m²', img: '/s-plaquiste.png' },
           ].map((item, i) => (
             <R key={i} delay={i * 50} cls={s.realItem}>
               <div className={s.realImg}>

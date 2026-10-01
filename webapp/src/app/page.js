@@ -53,7 +53,7 @@ export default function Home() {
     <>
       <section className={s.hero}>
         <div className={s.heroPic}>
-          <Image src="/hero.jpg" alt="Espace rénové par RENOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
+          <Image src="/008.webp" alt="Espace rénové par RENOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
         </div>
         <div className={s.heroVeil} />
         <div className={s.heroBody}>

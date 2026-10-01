@@ -31,7 +31,7 @@ export default function APropos() {
       <section className={s.about}>
         <R cls={s.aboutPicWrap}>
           <div className={s.aboutPic}>
-            <Image src="/s2.jpg" alt="Artisan peintre RENOVA" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" />
+            <Image src="/chantiers-plaquiste.webp" alt="Artisan peintre RENOVA" fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" />
           </div>
         </R>
         <div className={s.aboutContent}>
