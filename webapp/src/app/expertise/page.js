@@ -43,17 +43,17 @@ export default function Expertise() {
         </div>
         <div className={s.expertiseR}>
           {[
-            { num: '01', title: 'Plaquisterie', txt: 'Pose de plaques de plâtre, cloisons de distribution, plafonds suspendus et doublages isolants. Respect strict des règles DTU.' },
-            { num: '02', title: 'Jointure & Enduits', txt: 'Jointage des plaques BA13, application d\'enduits de lissage, finitions planes parfaites prêtes à recevoir la peinture.' },
-            { num: '03', title: 'Peinture', txt: 'Application de peintures intérieures professionnelles. Conseils colorimètriques, préparation des supports, finition irréprochable.' },
-            { num: '04', title: 'Rénovation Complète', txt: 'Pilotage global de vos projets de rénovation intérieure, du second œuvre à la livraison clé en main.' },
+            { num: '01', title: 'Plaquisterie & Isolation', txt: 'Pose de cloisons distributives, faux-plafonds techniques et doublages thermiques. Notre maîtrise absolue du placo (BA13, phonique, hydrofuge) garantit une géométrie parfaite de vos volumes, essentielle pour les étapes suivantes. Isolation certifiée RGE pour un confort thermique optimal.' },
+            { num: '02', title: 'Jointure Haute Définition', txt: 'L\'étape cruciale pour un rendu impeccable. Nos jointeurs réalisent des bandes et des enduits d\'une planéité absolue (finition Q3 ou Q4). Un ratissage fin et un ponçage mécanique sans poussière assurent l\'absence totale de spectres sous la lumière rasante.' },
+            { num: '03', title: 'Peinture & Finitions', txt: 'La touche finale qui sublime vos espaces. Application au pistolet Airless pour un tendu exceptionnel et homogène, ou au rouleau traditionnel. Nous utilisons des peintures professionnelles (Zolpan, Seigneurie, Farrow & Ball) avec une protection absolue des sols et du mobilier.' },
+            { num: '04', title: 'Protection & Propreté', txt: 'Un "chantier propre" n\'est pas une option, c\'est notre standard. De la protection minutieuse des éléments existants (sols, menuiseries, mobilier) jusqu\'au nettoyage complet de fin de chantier, nous vous livrons un espace prêt à vivre.' },
           ].map((item, i) => (
             <R key={item.num} delay={i * 80} cls={s.expCard}>
               <div className={s.expCardInner}>
                 <span className={s.expNum}>{item.num}</span>
                 <div>
                   <h3 className={s.expTitle}>{item.title}</h3>
-                  <p className={s.expTxt}>{item.txt}</p>
+                  <p className={s.expTxt} style={{ lineHeight: '1.6', marginTop: '0.5rem', color: 'var(--smoke)' }}>{item.txt}</p>
                 </div>
               </div>
             </R>
