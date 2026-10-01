@@ -1,0 +1,78 @@
+.wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tooltip {
+  background: white;
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.showTooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.waButton {
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  animation: waBounce 1s ease-in-out infinite alternate;
+}
+
+.waButton:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.6);
+  animation-play-state: paused;
+}
+
+.waIcon {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes waBounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  .waButton {
+    width: 52px;
+    height: 52px;
+  }
+  .waIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
