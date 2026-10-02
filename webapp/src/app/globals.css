@@ -4,19 +4,21 @@
    TOKENS
 ───────────────────────────────────────── */
 :root {
-  --black:   #06151d;
-  --ink:     #1c4a5e;
-  --carbon:  #143546;
-  --smoke:   #255d72;
+  --black:   #1c4a5e; /* Unified blue */
+  --ink:     #1c4a5e; /* Unified blue */
+  --carbon:  #1c4a5e; /* Unified blue */
+  --smoke:   #1c4a5e; /* Unified blue */
   --mid:     #5a6a75;
   --stone:   #8a9ca8;
   --ash:     #b8c4cb;
   --silver:  #d8e0e5;
   --pearl:   #f2f5f7;
   --white:   #ffffff;
-  --gold:    #ffc843;
-  --gold-lt: #ffd770;
-  --gold-dk: #d4a326;
+  
+  /* Retaining gold just in case, but will use less of it */
+  --gold:    #c9a84c;
+  --gold-lt: #e8c97a;
+  --gold-dk: #b3923a;
 
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;

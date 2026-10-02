@@ -53,7 +53,7 @@ export default function Home() {
     <>
       <section className={s.hero}>
         <div className={s.heroPic}>
-          <Image src="/s-plaquiste.png" alt="Espace rénové par RENOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
+          <Image src="/s-plaquiste.avif" alt="Espace rénové par RENOVA" fill priority quality={85} style={{ objectFit: 'cover' }} />
         </div>
         <div className={s.heroVeil} />
         <div className={s.heroBody}>
@@ -107,7 +107,7 @@ export default function Home() {
             </p>
           </R>
           
-          <div className={s.testimGrid} style={{ marginTop: '2rem', marginBottom: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div className={s.servicesGrid}>
             <R delay={100} cls={s.testimCard} style={{ background: 'var(--bg, #f4f6f9)', padding: '2rem', borderRadius: '4px' }}>
               <h3 className={s.expTitle} style={{ color: 'var(--ink)' }}>Plaquisterie</h3>
               <p className={s.body} style={{ marginTop: '1rem', fontSize: '0.85rem' }}>Création de cloisons, faux-plafonds, doublages et agencements sur-mesure pour redéfinir vos espaces.</p>
@@ -122,7 +122,7 @@ export default function Home() {
             </R>
           </div>
           
-          <div style={{ marginTop: '3rem' }}>
+          <div style={{ marginTop: '1rem' }}>
             <Link href="/expertise" className={s.btnInk}>Découvrir notre expertise</Link>
           </div>
         </div>

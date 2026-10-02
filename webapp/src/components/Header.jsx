@@ -20,6 +20,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', fn);
   }, []);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
     <header className={`${s.header} ${isSolid ? s.solid : ''}`}>
       <div className={s.inner}>

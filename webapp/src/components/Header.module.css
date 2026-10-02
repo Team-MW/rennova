@@ -62,7 +62,7 @@
   position: absolute;
   left: 0; bottom: -3px;
   width: 0; height: 1px;
-  background: var(--gold, #c9a84c);
+  background: #fff;
   transition: width 0.3s ease;
 }
 .link:hover { color: #fff; }
@@ -74,15 +74,15 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--black, #0a0a0a);
-  background: var(--gold, #c9a84c);
+  color: var(--ink);
+  background: var(--white);
   padding: 0.6rem 1.5rem;
   border-radius: 2px;
   transition: background 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 .cta:hover {
-  background: var(--gold-lt, #e8c97a);
+  background: var(--pearl);
   transform: translateY(-1px);
 }
 
@@ -105,45 +105,59 @@
 .burgerOpen span:last-child  { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* Mobile menu */
+/* Mobile menu */
 .mobile {
   display: none;
   flex-direction: column;
-  background: var(--black, #06151d);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1);
+  position: fixed;
+  inset: 0;
+  top: 72px; /* Height of the header */
+  background: var(--ink);
+  padding: 2rem 1.5rem 4rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  z-index: 90;
 }
-.mobileOpen { max-height: 400px; }
+.mobileOpen { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0);
+}
 .mobileLink {
   display: block;
-  padding: 1rem 3rem;
-  font-size: 0.85rem;
+  padding: 1.25rem 0;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   transition: color 0.2s;
+  text-align: center;
 }
 .mobileLink:hover { color: #fff; }
 .mobileCta {
   display: block;
-  margin: 1.5rem 3rem 2rem;
-  padding: 0.875rem;
+  margin-top: 2rem;
+  padding: 1rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: var(--gold, #c9a84c);
-  color: #0a0a0a;
+  background: var(--white);
+  color: var(--ink);
   border-radius: 2px;
 }
 
 @media (max-width: 900px) {
-  .header { padding: 0 1.5rem; }
-  .solid { padding: 0 1.5rem; }
+  .header { padding: 0; }
+  .solid { padding: 0; }
+  .inner { padding: 0 1.5rem; }
   .nav, .cta { display: none; }
-  .burger { display: flex; }
+  .burger { display: flex; z-index: 101; position: relative; }
   .mobile { display: flex; }
 }

@@ -65,11 +65,11 @@ export default function Contact() {
             <div className={s.contactDetails}>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Téléphone</span>
-                <span className={s.cDetailVal}>07 67 02 19 44</span>
+                <a href="tel:+33767021944" className={s.cDetailVal} style={{ textDecoration: 'none' }}>07 67 02 19 44</a>
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Email</span>
-                <span className={s.cDetailVal}>contact@renova.fr</span>
+                <a href="mailto:contact@renova.fr" className={s.cDetailVal} style={{ textDecoration: 'none' }}>contact@renova.fr</a>
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Zone</span>

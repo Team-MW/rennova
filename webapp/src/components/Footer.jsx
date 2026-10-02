@@ -21,8 +21,8 @@ export default function Footer() {
           </div>
           <div className={s.footerCol}>
             <p className={s.footerColH}>Coordonnées</p>
-            <span className={s.fl}>07 67 02 19 44</span>
-            <span className={s.fl}>contact@renova.fr</span>
+            <a href="tel:+33767021944" className={s.fl}>07 67 02 19 44</a>
+            <a href="mailto:contact@renova.fr" className={s.fl}>contact@renova.fr</a>
             <span className={s.fl}>Toulouse, Occitanie</span>
           </div>
         </div>

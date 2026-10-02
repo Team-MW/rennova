@@ -1,0 +1,111 @@
+.heroAbout {
+  position: relative;
+  padding: 14rem 5vw 10rem;
+  background: var(--ink, #111);
+  color: #fff;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url('/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at center, transparent 0%, rgba(28,74,94,0.6) 100%),
+    linear-gradient(to top, var(--ink) 0%, rgba(28,74,94,0) 40%);
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+}
+
+/* Editorial Story Section */
+.storyEditorial {
+  background: var(--white);
+  padding: 8rem 5vw;
+}
+.storyEditorialInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+.storyText {
+  max-width: 500px;
+}
+.storyImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+/* Minimalist Manifesto / Approach */
+.approach {
+  background: var(--pearl, #f8f9fa);
+  padding: 10rem 5vw;
+}
+.approachInner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.approachHeader {
+  max-width: 700px;
+  margin-bottom: 5rem;
+}
+.approachList {
+  display: flex;
+  flex-direction: column;
+}
+.approachItem {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-top: 1px solid var(--silver);
+}
+.approachItem:last-child {
+  border-bottom: 1px solid var(--silver);
+}
+.approachNum {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.approachTitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.approachText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+@media (max-width: 900px) {
+  .storyEditorialInner {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .approachItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 3rem 0;
+  }
+  .approachNum {
+    margin-bottom: 1rem;
+  }
+}
