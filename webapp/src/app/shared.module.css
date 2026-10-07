@@ -263,6 +263,10 @@
   gap: 1.5rem;
   margin-top: 3rem;
 }
+.miniRealGrid > div {
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
+}
 
 .realItem {
   position: relative;
