@@ -418,7 +418,28 @@
 .testimHead .h2 { margin-top: 0.75rem; }
 .testimGrid {
   max-width: 1400px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink) rgba(0,0,0,0.05);
+}
+.testimGrid::-webkit-scrollbar {
+  height: 8px;
+}
+.testimGrid::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+.testimGrid::-webkit-scrollbar-thumb {
+  background: var(--ink);
+  border-radius: 4px;
+}
+.testimGrid > div {
+  flex: 0 0 400px;
+  scroll-snap-align: start;
 }
 .servicesGrid {
   display: grid;

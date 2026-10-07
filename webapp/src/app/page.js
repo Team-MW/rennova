@@ -208,6 +208,9 @@ export default function Home() {
             { q: 'Chantier impeccable. Les finitions sont d\'une précision remarquable. L\'équipe est sérieuse, ponctuelle et laisse les lieux propres après chaque journée de travail.', name: 'Sophie M.', role: 'Propriétaire — Toulouse' },
             { q: 'Je confie systématiquement mes chantiers de rénovation à RENOVA depuis 3 ans. Fiabilité, respect des délais et qualité d\'exécution irréprochable. Un partenaire de confiance.', name: 'Marc D.', role: 'Promoteur immobilier' },
             { q: 'La maîtrise technique de l\'équipe est vraiment au-dessus de la moyenne. Mes clients architectes et moi-même sommes toujours très satisfaits de la qualité des finitions.', name: 'Isabelle T.', role: 'Architecte d\'intérieur' },
+            { q: 'Excellent travail pour la rénovation de notre appartement. Rapide, soigné et à l\'écoute de nos besoins. Je recommande vivement.', name: 'Thomas L.', role: 'Propriétaire — Balma' },
+            { q: 'Un artisan de confiance ! Les conseils en agencement ont fait une vraie différence sur le résultat final.', name: 'Marie G.', role: 'Commerçante' },
+            { q: 'Nous avons fait appel à RENOVA pour refaire toute l\'isolation et les peintures. Le résultat est tout simplement parfait.', name: 'Lucas P.', role: 'Propriétaire — Tournefeuille' },
           ].map((t, i) => (
             <R key={t.name} delay={i * 100} cls={s.testimCard}>
               <div className={s.testimQ}>&ldquo;{t.q}&rdquo;</div>
