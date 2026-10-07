@@ -49,6 +49,7 @@ function R({ children, cls = '', delay = 0 }) {
 }
 
 export default function Home() {
+  const miniRef = useRef(null);
   return (
     <>
       <section className={s.hero}>
@@ -128,43 +129,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={s.zone} style={{ background: 'var(--pearl, #f8f9fa)' }}>
-        <div className={s.zoneInner}>
-          <R>
+      <section className={s.miniReal}>
+        <div className={s.miniRealHead}>
+          <div>
             <p className={s.label}>Nos Réalisations</p>
             <h2 className={s.h2}>
-              Aperçu de nos<br />
-              <em>derniers chantiers.</em>
+              Aperçu de nos <em>derniers chantiers.</em>
             </h2>
-          </R>
-          
-          <div className={s.miniRealGrid}>
-            {[
-              { id: 38, cat: 'Rénovation Complète', title: 'Appartement', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
-              { id: 39, cat: 'Finitions', title: 'Mise en Peinture', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
-              { id: 40, cat: 'Plaquisterie', title: 'Chantier Plaquisterie', sub: 'Nantes', img: '/portfolio/p-31.webp' },
-              { id: 41, cat: 'Agencement', title: 'Agencement Intérieur', sub: 'Toulouse', img: '/portfolio/p-32.jpg' },
-            ].map((item, i) => (
-              <R key={item.id} delay={i * 100} cls={s.realItem} style={{ minHeight: '300px' }}>
-                <Link href="/realisations" style={{ display: 'block', width: '100%', height: '100%' }}>
-                  <div className={s.realImg}>
-                    <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:900px) 100vw, 25vw" />
-                  </div>
-                  <div className={s.realOverlay}>
-                    <div>
-                      <div className={s.realTag}>{item.cat}</div>
-                      <h4 className={s.realTitle} style={{ fontSize: '1.1rem' }}>{item.title}</h4>
-                      <p className={s.realSub} style={{ fontSize: '0.8rem' }}>{item.sub}</p>
-                    </div>
-                  </div>
-                </Link>
-              </R>
-            ))}
           </div>
-          
-          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-            <Link href="/realisations" className={s.btnInk}>Voir tout le portfolio</Link>
+          <div className={s.miniRealNav}>
+            <button type="button" id="mini-real-prev" aria-label="Précédent" onClick={() => miniRef.current?.scrollBy({ left: -300, behavior: 'smooth' })}>←</button>
+            <button type="button" id="mini-real-next" aria-label="Suivant" onClick={() => miniRef.current?.scrollBy({ left: 300, behavior: 'smooth' })}>→</button>
           </div>
+        </div>
+
+        <div className={s.miniRealTrack} ref={miniRef}>
+          {[
+            { id: 38, cat: 'Rénovation Complète', title: 'Appartement', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
+            { id: 39, cat: 'Finitions', title: 'Mise en Peinture', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
+            { id: 40, cat: 'Plaquisterie', title: 'Chantier Plaquisterie', sub: 'Haute-Garonne', img: '/portfolio/p-31.webp' },
+            { id: 41, cat: 'Agencement', title: 'Agencement Intérieur', sub: 'Toulouse', img: '/portfolio/p-32.jpg' },
+          ].map((item) => (
+            <Link key={item.id} href="/realisations" className={s.miniCard}>
+              <div className={s.miniCardImg}>
+                <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} sizes="280px" />
+                <span className={s.miniCardTag}>{item.cat}</span>
+              </div>
+              <div className={s.miniCardBody}>
+                <h3>{item.title}</h3>
+                <p>{item.sub}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+          <Link href="/realisations" className={s.btnInk}>Voir tout le portfolio</Link>
         </div>
       </section>
 
