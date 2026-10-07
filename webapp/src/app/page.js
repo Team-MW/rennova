@@ -128,6 +128,46 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={s.zone} style={{ background: 'var(--pearl, #f8f9fa)' }}>
+        <div className={s.zoneInner}>
+          <R>
+            <p className={s.label}>Nos Réalisations</p>
+            <h2 className={s.h2}>
+              Aperçu de nos<br />
+              <em>derniers chantiers.</em>
+            </h2>
+          </R>
+          
+          <div className={s.realGrid} style={{ marginTop: '3rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+            {[
+              { id: 38, cat: 'Rénovation Complète', title: 'Appartement', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
+              { id: 39, cat: 'Finitions', title: 'Mise en Peinture', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
+              { id: 40, cat: 'Plaquisterie', title: 'Chantier Plaquisterie', sub: 'Nantes', img: '/portfolio/p-31.webp' },
+              { id: 41, cat: 'Agencement', title: 'Agencement Intérieur', sub: 'Toulouse', img: '/portfolio/p-32.jpg' },
+            ].map((item, i) => (
+              <R key={item.id} delay={i * 100} cls={s.realItem} style={{ minHeight: '300px' }}>
+                <Link href="/realisations" style={{ display: 'block', width: '100%', height: '100%' }}>
+                  <div className={s.realImg}>
+                    <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:900px) 100vw, 25vw" />
+                  </div>
+                  <div className={s.realOverlay}>
+                    <div>
+                      <div className={s.realTag}>{item.cat}</div>
+                      <h4 className={s.realTitle} style={{ fontSize: '1.1rem' }}>{item.title}</h4>
+                      <p className={s.realSub} style={{ fontSize: '0.8rem' }}>{item.sub}</p>
+                    </div>
+                  </div>
+                </Link>
+              </R>
+            ))}
+          </div>
+          
+          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <Link href="/realisations" className={s.btnInk}>Voir tout le portfolio</Link>
+          </div>
+        </div>
+      </section>
+
       <section className={s.zone}>
         <div className={s.zoneInner}>
           <R>

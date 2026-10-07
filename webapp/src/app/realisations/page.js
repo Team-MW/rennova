@@ -32,6 +32,10 @@ function R({ children, cls = '', delay = 0 }) {
 }
 
 const projects = [
+  { id: 38, cat: 'Rénovation Complète', title: 'Travaux de Rénovation', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
+  { id: 39, cat: 'Rénovation Complète', title: 'Rénovation Intérieure', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
+  { id: 40, cat: 'Plaquisterie', title: 'Chantier Plaquisterie', sub: 'Nantes/Vendée', img: '/portfolio/p-31.webp' },
+  { id: 41, cat: 'Agencement', title: 'Agencement Intérieur', sub: 'Toulouse', img: '/portfolio/p-32.jpg' },
   { id: 1, cat: 'Rénovation Complète', title: 'Appartement Haussmannien', sub: 'Toulouse Centre — 110 m²', img: '/r1.jpg' },
   { id: 2, cat: 'Plaquisterie', title: 'Villa Contemporaine', sub: 'Balma — 150 m²', img: '/chantiers-plaquiste.webp' },
   { id: 3, cat: 'Peinture', title: 'Loft Industriel', sub: 'Toulouse — 90 m²', img: '/r2.jpg' },
