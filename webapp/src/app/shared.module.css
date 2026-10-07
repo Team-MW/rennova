@@ -257,6 +257,13 @@
   gap: 1.5rem;
 }
 
+.miniRealGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
 .realItem {
   position: relative;
   overflow: hidden;
@@ -638,6 +645,25 @@
   .realOverlay { opacity: 1; }
   .realTitle { transform: none; }
   .realSub { transform: none; opacity: 1; }
+  
+  .miniRealGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .miniRealGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .miniRealGrid > div {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
   
   .testimGrid {
     display: flex;

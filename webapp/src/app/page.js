@@ -138,7 +138,7 @@ export default function Home() {
             </h2>
           </R>
           
-          <div className={s.realGrid} style={{ marginTop: '3rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+          <div className={s.miniRealGrid}>
             {[
               { id: 38, cat: 'Rénovation Complète', title: 'Appartement', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
               { id: 39, cat: 'Finitions', title: 'Mise en Peinture', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
