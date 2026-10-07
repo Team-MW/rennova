@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={s.footer}>
       <div className={s.footerInner}>
         <div className={s.footerBrand}>
-          <Image src="/logo-full.png" alt="RENOVA" width={200} height={60} style={{ height: 'auto', width: 'auto', maxHeight: 48 }} />
+          <Image src="/logo-icon.jpg" alt="RENOVA" width={200} height={60} style={{ height: 'auto', width: 'auto', maxHeight: 48 }} />
           <p className={s.footerTagline}>Jointure · Plaquisterie · Peinture · Rénovation</p>
         </div>
         <div className={s.footerLinks}>
@@ -22,7 +22,7 @@ export default function Footer() {
           <div className={s.footerCol}>
             <p className={s.footerColH}>Coordonnées</p>
             <a href="tel:+33767021944" className={s.fl}>07 67 02 19 44</a>
-            <a href="mailto:contact@renova.fr" className={s.fl}>contact@renova.fr</a>
+            <a href="mailto:contact@renova31.fr" className={s.fl}>contact@renova31.fr</a>
             <span className={s.fl}>Toulouse, Occitanie</span>
           </div>
         </div>

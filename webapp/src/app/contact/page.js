@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import s from '../shared.module.css';
 
 function useReveal(threshold = 0.15) {
@@ -54,6 +55,17 @@ export default function Contact() {
 
   return (
     <div style={{ paddingTop: '72px' }}>
+      <Script 
+        id="google-conversion" 
+        strategy="afterInteractive" 
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('event', 'conversion', {'send_to': 'AW-17945087880/IopzCOuGrpQdEIif8exC'});
+          `
+        }}
+      />
       <section className={s.contact}>
         <div className={s.contactL}>
           <R>
@@ -69,7 +81,7 @@ export default function Contact() {
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Email</span>
-                <a href="mailto:contact@renova.fr" className={s.cDetailVal} style={{ textDecoration: 'none' }}>contact@renova.fr</a>
+                <a href="mailto:contact@renova31.fr" className={s.cDetailVal} style={{ textDecoration: 'none' }}>contact@renova31.fr</a>
               </div>
               <div className={s.cDetail}>
                 <span className={s.cDetailKey}>Zone</span>
