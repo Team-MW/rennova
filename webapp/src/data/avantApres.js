@@ -28,8 +28,6 @@ export const avantPhotos = [
   { src: '/avant-apres/salon-avant.jpg', alt: 'Séjour avant enduits et peinture' },
   { src: '/avant-apres/biblio-avant.jpg', alt: 'Bibliothèque en cours de pose' },
   { src: '/portfolio/p-5.jpg', alt: 'Pièce en cours de jointoiement' },
-  { src: '/portfolio/p-11.jpg', alt: 'Salle d’eau en plaquisterie' },
-  { src: '/portfolio/p-14.jpg', alt: 'Volumes en cours de doublage' },
   { src: '/portfolio/p-17.jpg', alt: 'Plafond en cours d’enduit' },
 ];
 
