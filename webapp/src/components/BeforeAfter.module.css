@@ -1,0 +1,123 @@
+.card {
+  margin: 0;
+}
+
+.large {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--silver, #d8e0e5);
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+  box-shadow: 0 16px 40px rgba(28, 74, 94, 0.12);
+}
+
+.large .stage {
+  aspect-ratio: 4 / 5;
+}
+
+.stage img {
+  pointer-events: none;
+}
+
+.before {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+}
+
+.pillLeft,
+.pillRight {
+  position: absolute;
+  top: 14px;
+  z-index: 2;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink, #1c4a5e);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.pillLeft { left: 14px; }
+.pillRight { right: 14px; }
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--reveal);
+  width: 48px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  outline: none;
+}
+
+.handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(28, 74, 94, 0.12);
+}
+
+.knob {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink, #1c4a5e);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 8px 22px rgba(28, 74, 94, 0.28);
+}
+
+.handle:focus-visible .knob {
+  box-shadow: 0 0 0 3px var(--ink, #1c4a5e), 0 8px 22px rgba(28, 74, 94, 0.28);
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0.15rem 0;
+}
+
+.caption h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink, #1c4a5e);
+  margin: 0;
+}
+
+.caption p {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid, #5a6a75);
+}

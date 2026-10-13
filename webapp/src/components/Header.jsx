@@ -10,7 +10,7 @@ export default function Header() {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const isSolid = solid || pathname !== '/';
+  const isSolid = solid || open || pathname !== '/';
 
   useEffect(() => {
     const fn = () => setSolid(window.scrollY > 80);

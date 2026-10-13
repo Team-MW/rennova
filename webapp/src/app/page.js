@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import s from './shared.module.css';
+import BeforeAfter from '../components/BeforeAfter';
+import GoogleMark from '../components/GoogleMark';
+import { comparisons, GOOGLE_REVIEW_URL } from '../data/avantApres';
 
 function useReveal(threshold = 0.15) {
   const ref = useRef(null);
@@ -95,6 +98,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={s.miniReal}>
+        <div className={s.miniRealHead}>
+          <div>
+            <p className={s.label}>Avant / Après</p>
+            <h2 className={s.h2}>
+              Le chantier, puis <em>le résultat.</em>
+            </h2>
+          </div>
+          <div className={s.miniRealNav}>
+            <button type="button" aria-label="Précédent" onClick={() => miniRef.current?.scrollBy({ left: -360, behavior: 'smooth' })}>←</button>
+            <button type="button" aria-label="Suivant" onClick={() => miniRef.current?.scrollBy({ left: 360, behavior: 'smooth' })}>→</button>
+          </div>
+        </div>
+
+        <p className={s.baHint}>Glissez sur la photo pour comparer l&apos;avant et l&apos;après.</p>
+
+        <div className={s.baHome} ref={miniRef}>
+          {comparisons.map((item, index) => (
+            <div key={item.id} className={index === 0 ? s.baSpan : undefined}>
+              <BeforeAfter
+                before={item.before}
+                after={item.after}
+                title={item.title}
+                place={item.place}
+                large={index === 0}
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+          <Link href="/realisations" className={s.btnInk}>Voir tous les avant / après</Link>
+        </div>
+      </section>
+
       <section className={s.zone} style={{ background: '#fff', paddingBottom: '2rem' }}>
         <div className={s.zoneInner}>
           <R>
@@ -126,45 +165,6 @@ export default function Home() {
           <div style={{ marginTop: '1rem' }}>
             <Link href="/expertise" className={s.btnInk}>Découvrir notre expertise</Link>
           </div>
-        </div>
-      </section>
-
-      <section className={s.miniReal}>
-        <div className={s.miniRealHead}>
-          <div>
-            <p className={s.label}>Nos Réalisations</p>
-            <h2 className={s.h2}>
-              Aperçu de nos <em>derniers chantiers.</em>
-            </h2>
-          </div>
-          <div className={s.miniRealNav}>
-            <button type="button" id="mini-real-prev" aria-label="Précédent" onClick={() => miniRef.current?.scrollBy({ left: -300, behavior: 'smooth' })}>←</button>
-            <button type="button" id="mini-real-next" aria-label="Suivant" onClick={() => miniRef.current?.scrollBy({ left: 300, behavior: 'smooth' })}>→</button>
-          </div>
-        </div>
-
-        <div className={s.miniRealTrack} ref={miniRef}>
-          {[
-            { id: 38, cat: 'Rénovation Complète', title: 'Appartement', sub: 'Toulouse', img: '/portfolio/p-29.jpg' },
-            { id: 39, cat: 'Finitions', title: 'Mise en Peinture', sub: 'Toulouse', img: '/portfolio/p-30.jpg' },
-            { id: 40, cat: 'Plaquisterie', title: 'Chantier Plaquisterie', sub: 'Haute-Garonne', img: '/portfolio/p-31.webp' },
-            { id: 41, cat: 'Agencement', title: 'Agencement Intérieur', sub: 'Toulouse', img: '/portfolio/p-32.jpg' },
-          ].map((item) => (
-            <Link key={item.id} href="/realisations" className={s.miniCard}>
-              <div className={s.miniCardImg}>
-                <Image src={item.img} alt={item.title} fill style={{ objectFit: 'cover' }} sizes="280px" />
-                <span className={s.miniCardTag}>{item.cat}</span>
-              </div>
-              <div className={s.miniCardBody}>
-                <h3>{item.title}</h3>
-                <p>{item.sub}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-          <Link href="/realisations" className={s.btnInk}>Voir tout le portfolio</Link>
         </div>
       </section>
 
@@ -203,6 +203,19 @@ export default function Home() {
           <p className={s.label}>Témoignages</p>
           <h2 className={s.h2}>Ce que disent<br />nos clients.</h2>
         </R>
+        <div className={s.googleBar}>
+          <div className={s.googleBarText}>
+            <GoogleMark size={28} />
+            <div>
+              <p className={s.googleBarTitle}>Avis Google</p>
+              <p className={s.googleBarSub}>Votre retour aide les prochains clients à nous trouver.</p>
+            </div>
+          </div>
+          <a className={s.googleBtn} href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+            <GoogleMark size={16} />
+            Laisser un avis
+          </a>
+        </div>
         <div className={s.testimGrid}>
           {[
             { q: 'Chantier impeccable. Les finitions sont d\'une précision remarquable. L\'équipe est sérieuse, ponctuelle et laisse les lieux propres après chaque journée de travail.', name: 'Sophie M.', role: 'Propriétaire — Toulouse' },
@@ -213,6 +226,10 @@ export default function Home() {
             { q: 'Nous avons fait appel à RENOVA pour refaire toute l\'isolation et les peintures. Le résultat est tout simplement parfait.', name: 'Lucas P.', role: 'Propriétaire — Tournefeuille' },
           ].map((t, i) => (
             <R key={t.name} delay={i * 100} cls={s.testimCard}>
+              <div className={s.testimMeta}>
+                <GoogleMark size={16} />
+                <span className={s.stars} aria-label="5 étoiles sur Google">★★★★★</span>
+              </div>
               <div className={s.testimQ}>&ldquo;{t.q}&rdquo;</div>
               <div className={s.testimBy}>
                 <div className={s.testimLine} />

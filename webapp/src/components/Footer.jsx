@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import s from './Footer.module.css';
+import GoogleMark from './GoogleMark';
+import { GOOGLE_REVIEW_URL } from '../data/avantApres';
 
 export default function Footer() {
   return (
@@ -24,6 +26,10 @@ export default function Footer() {
             <a href="tel:+33767021944" className={s.fl}>07 67 02 19 44</a>
             <a href="mailto:contact@renova31.fr" className={s.fl}>contact@renova31.fr</a>
             <span className={s.fl}>Toulouse, Occitanie</span>
+            <a href={GOOGLE_REVIEW_URL} className={s.fl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+              <GoogleMark size={14} />
+              Laisser un avis Google
+            </a>
           </div>
         </div>
       </div>
